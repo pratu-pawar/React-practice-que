@@ -14,10 +14,10 @@ const Quethree = (props) =>{
 
     return ( 
         <div> 
-            <from onSubmit={handelSubmit}> 
+            <form onSubmit={handelSubmit}> 
                 <input type="text" value={name} onChange={handleChange}></input>
                 <button type="submit">Submit</button>
-            </from>
+            </form>
         </div>
     )
 }

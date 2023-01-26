@@ -1,18 +1,26 @@
-import React, { useRef } from "react"
+import React, { useRef, useState } from "react";
 
-const QueElavan = () =>{ 
-    
-    let BgcolourRef = useRef("black")
+const QueElavan = () => {
+    const [color, setColor] = useState('red');
+    const colorRef = useRef(color);
+  
+    function handleClick() {
+      if (colorRef.current === 'red') {
+        setColor('black');
+        colorRef.current = 'black';
+      } else {
+        setColor('red');
+        colorRef.current = 'red';
+      }
+    }
 
-   function ChangebgColor(){ 
-    BgcolourRef.current.bgcolor="red"
-   }
-    return ( 
-        <div> 
-            <div ref={BgcolourRef} ></div>
-            <button onClick={ChangebgColor}>Click Me</button>
-        </div>
-    )
-}
+  return (
+    <div>
+    <button onClick={handleClick}>Toggle Background</button>
+    <div style={{ backgroundColor: color, width: '100px', height: '100px' }}>
+    </div>
+  </div>
+  );
+};
 
 export default QueElavan;

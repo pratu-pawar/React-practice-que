@@ -16,10 +16,11 @@ class Queeight extends Component{
       async componentDidMount(){ 
         this.setState({isloading:true})
         const response = await fetch("https://jsonplaceholder.typicode.com/users")
+     
          if (response.ok){ 
             const users =  await response.json()
             console.log(users);
-            this.setState({users,isloading:false})
+            this.setState({users:users,isloading:false})
 
          }else{ 
             this.setState({isError:true, isloading:false})
@@ -55,7 +56,7 @@ class Queeight extends Component{
 
 
     render(){ 
-        const  [users, isloading, isError] = this.setState
+        const  {users, isloading, isError} = this.state
 
         if(isloading){ 
             return <div>isloading...</div>

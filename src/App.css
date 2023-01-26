@@ -36,3 +36,23 @@
     transform: rotate(360deg);
   }
 }
+
+.main{
+  align-items: center;
+  justify-content: center;
+  padding: 2%;
+ text-align: center;
+}
+
+.content{
+  border: 1px solid black;
+  margin-bottom: 20px;
+  padding: 5px;
+}
+
+.header{
+  font-weight: bolder;
+  font-size: large;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
